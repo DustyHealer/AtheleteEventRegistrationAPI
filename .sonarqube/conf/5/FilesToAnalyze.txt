@@ -1,0 +1,10 @@
+﻿C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\Test\Controller\UserControllerTest.cs
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\Test\InfraSetup\AthleteEventDbFixture.cs
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\Test\InfraSetup\CategoryWebApplicationFactory.cs
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\Test\InfraSetup\PriorityOrder.cs
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\Test\InfraSetup\TokenModel.cs
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\Test\InfraSetup\UserDbFixture.cs
+C:\Users\amazi\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\amazi\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\amazi\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\Test\appsettings.json

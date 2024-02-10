@@ -1,0 +1,6 @@
+version: '3.5'
+services:
+  apigateway:
+    image: apigateway
+    ports:
+      - "9015:80"

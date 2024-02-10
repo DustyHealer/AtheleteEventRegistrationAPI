@@ -1,0 +1,12 @@
+﻿C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\Program.cs
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\Startup.cs
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.AssemblyInfo.cs
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\appsettings.Development.json
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\appsettings.json
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\ocelot.json
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\docker-compose.yml
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\Dockerfile
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\Properties\launchSettings.json
+C:\Users\amazi\OneDrive\Documents\Personal\SBA\athlete-app-backend\APIGateway\obj\Debug\netcoreapp3.1\apphost.exe

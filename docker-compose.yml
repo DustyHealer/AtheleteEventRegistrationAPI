@@ -1,0 +1,103 @@
+version: '3.5'
+services:
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+  
+  sqldb:
+    image: mcr.microsoft.com/mssql/server
+    ports:
+      - '1433:1433'
+    environment:
+      SA_PASSWORD: "Passw0rd123"
+      ACCEPT_EULA: "Y"
+
+  consul:
+    image: consul
+    container_name: consul
+    hostname: consul
+    volumes:
+      - ./consul/data:/consul/data
+      - ./consul/config:/consul/config
+    environment:
+      - "CONSUL_LOCAL_CONFIG={\"disable_update_check\": true, \"skip_leave_on_interrupt\": true}"
+    entrypoint:
+      - consul
+      - agent
+      - -server
+      - -data-dir=/consul
+      - -bootstrap-expect=1
+      - -ui 
+      - -client=0.0.0.0
+    ports:
+      - "8501:8500"
+
+  userapi:
+    image: userapi
+    ports:
+      - "9011:80"
+    environment:
+      DatabaseConnection: "mongodb://db:27017"
+      DatabaseName: "UserSbaDb"
+      ConsulServiceName: "UserApi"
+      ConsulServiceHost: "localhost"
+      ConsulServicePort: "9011"
+      ConsulAddress: "http://localhost:8501"
+    depends_on:
+      - db
+    links:
+      - consul
+
+  athleteapi:
+    image: athleteapi
+    ports:
+      - '9012:80'
+    environment:
+      DataConnection: "Data Source=sqldb;Initial Catalog=AthleteSbaDb;User Id=sa;Password=Passw0rd123;MultipleActiveResultSets=True;Persist Security Info=True"
+      ConsulServiceName: "AthleteApi"
+      ConsulServiceHost: "localhost"
+      ConsulServicePort: "9012"
+      ConsulAddress: "http://localhost:8501"
+    depends_on:
+      - sqldb
+    links:
+      - consul
+
+  athleteeventapi:
+    image: athleteeventapi
+    ports:
+      - "9013:80"
+    environment:
+      DatabaseConnection: "mongodb://db:27017"
+      DatabaseName: "AthleteEventSbaDb"
+      ConsulServiceName: "AthleteEventApi"
+      ConsulServiceHost: "localhost"
+      ConsulServicePort: "9013"
+      ConsulAddress: "http://localhost:8501"
+    depends_on:
+      - db      
+    links:
+      - consul
+
+  bookingapi:
+    image: bookingapi
+    ports:
+      - '9014:80'
+    environment:
+      DataConnection: "Data Source=sqldb;Initial Catalog=BookingSbaDb;User Id=sa;Password=Passw0rd123;MultipleActiveResultSets=True;Persist Security Info=True"
+      ConsulServiceName: "BookingApi"
+      ConsulServiceHost: "localhost"
+      ConsulServicePort: "9014"
+      ConsulAddress: "http://localhost:8501"
+    depends_on:
+      - sqldb  
+    links:
+      - consul
+
+  apigateway:
+    image: apigateway
+    ports:
+      - "9015:80"
+    links:
+      - consul

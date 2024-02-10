@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  userapi:
+    image: userapi
+    ports:
+      - "9011:80"
+    environment:
+      DatabaseConnection: "mongodb://db:27017"
+      DatabaseName: "UserSbaDb"
+    depends_on:
+      - db
